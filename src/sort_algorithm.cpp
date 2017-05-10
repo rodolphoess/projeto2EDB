@@ -68,8 +68,8 @@ void bubbleSort(float *v, int tamanho) {
 * @param tamanho	Inteiro com o tamanho do vetor
 */
 void quickSort(float *v, int *esq, int *dir) {	
-	int i = *esq;
-	int j = *dir;
+	int i = esq;
+	int j = dir;
 	int tmp;
 	int pivot = v[(i + j) / 2];
 
@@ -91,11 +91,11 @@ void quickSort(float *v, int *esq, int *dir) {
 		}
 
 		if (esq < j) {
-			quickSort(v, esq, &j);
+			quickSort(v, esq, j);
 		}
 
 		if (i < dir) {
-			quickSort(v, &i, dir);
+			quickSort(v, i, dir);
 		}
 	}
 }
