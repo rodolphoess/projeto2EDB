@@ -1,6 +1,6 @@
-# Makefile para "Projeto - Análise Empírica de Algoritmos de busca binária e busca sequencial" C++ aplication
+# Makefile para "Projeto - Análise Empírica de Algoritmos de ordenação" C++ aplication
 # Estrutura de Dados Básicas I - IMD/UFRN
-# Created by Daniel Oliveira
+# Created by Daniel Oliveira, Rodolpho Erick e Luis Eduardo
 
 # Comando do Sistema Operacional
 # Linux: rm -rf

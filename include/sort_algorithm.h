@@ -36,9 +36,10 @@ void bubbleSort(float *v, int tamanho);
 /**
 * @brief			Função que realiza a ordenação quicksort em um vetor
 * @param *v			Vetor com os elementos desordenados
-* @param tamanho	Inteiro com o tamanho do vetor
+* @param *esq		Inteiro indicando onde inicia o vetor
+* @param *dir		Inteiro indicando onde termina o vetor
 */
-void quickSort(float *v, int tamanho);
+void quickSort(float *v, int *esq, int *dir);
 
 /**
 * @brief			Função que realiza a ordenação mergesort em um vetor

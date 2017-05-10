@@ -67,8 +67,37 @@ void bubbleSort(float *v, int tamanho) {
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void quickSort(float *v, int tamanho) {	
-	
+void quickSort(float *v, int *esq, int *dir) {	
+	int i = *esq;
+	int j = *dir;
+	int tmp;
+	int pivot = v[(i + j) / 2];
+
+	while (i <= j) {
+		while (v[i] < pivot) {
+			i++;
+		}
+
+		while (v[j] > pivot) {
+			j--;
+		}
+
+		if (i <= j) {
+			tmp = v[i];
+			v[i] = v[j];
+			v[j] = tmp;
+			i++;
+			j--;
+		}
+
+		if (esq < j) {
+			quickSort(v, esq, &j);
+		}
+
+		if (i < dir) {
+			quickSort(v, &i, dir);
+		}
+	}
 }
 
 /**
