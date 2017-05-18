@@ -8,6 +8,9 @@ lib/*
 
 bin/*
 
+# Ignora todos os arquivos objeto
+build/*
+
 # Compiled Object files
 *.slo
 *.lo

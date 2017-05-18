@@ -17,29 +17,28 @@
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void selectionSort(float *v, int tamanho);
+void selectionSort(int *v, int tamanho);
 
 /**
 * @brief			Função que realiza a ordenação por inserção em um vetor
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void insertionSort(float *v, int tamanho);
+void insertionSort(int *v, int tamanho);
 
 /**
 * @brief			Função que realiza a ordenação por bolha em um vetor
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void bubbleSort(float *v, int tamanho);
+void bubbleSort(int *v, int tamanho);
 
 /**
 * @brief			Função que realiza a ordenação quicksort em um vetor
 * @param *v			Vetor com os elementos desordenados
-* @param *esq		Inteiro indicando onde inicia o vetor
-* @param *dir		Inteiro indicando onde termina o vetor
+* @param tamanho	Inteiro com o tamanho do vetor
 */
-void quickSort(float *v, int *esq, int *dir);
+void quickSort(int *v, int tamanho);
 
 /**
 * @brief			Função que realiza a ordenação mergesort em um vetor
@@ -47,7 +46,7 @@ void quickSort(float *v, int *esq, int *dir);
 * @param low		Primeiro elemento do vetor
 * @param high		Ultimo elemento do vetor
 */
-void mergeSort(float *v, int low, int high);
+void mergeSort(int *v, int low, int high);
 
 /**
 * @brief			Função que realiza a intercalacao durante a ordenacao mergesort em um vetor

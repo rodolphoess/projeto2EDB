@@ -53,7 +53,7 @@ $(OBJ_DIR)/sort_algorithm.o: $(SRC_DIR)/sort_algorithm.cpp $(INC_DIR)/sort_algor
 
 # Alvo (target) para a construcao do objeto main.o
 # Define o arquivo main.cpp como dependencias.
-$(TEST_DIR)/main.o: $(TEST_DIR)/main.cpp
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 # Alvo (target) para a geração automatica de documentacao usando o Doxygen.

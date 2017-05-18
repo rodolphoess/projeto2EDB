@@ -15,13 +15,13 @@
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void selectionSort(float *v, int tamanho) {
+void selectionSort(int *v, int tamanho) {
 	for (int ii = 0; ii < tamanho - 1; ii++) {
-		int menor = i;
+		int menor = ii;
 			for (int jj = ii + 1; jj < tamanho; jj++) {
 				if (v[jj] < v[menor]) menor = jj;
 			}
-		if (menor != i) {
+		if (menor != ii) {
 			float aux = v[ii];
 			v[ii] = v[menor];
 			v[menor] = aux;
@@ -34,9 +34,9 @@ void selectionSort(float *v, int tamanho) {
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void insertionSort(float *v, int tamanho) {	
+void insertionSort(int *v, int tamanho) {	
 	for (int ii = 0; ii < tamanho; ii++) {
-		int el = v[ii];
+		//int el = v[ii];
 			for (int jj = ii; jj >= 1 && v[jj] < v[jj - 1]; jj--) {
 				float aux = v[jj];
 				v[jj] = v[jj - 1];
@@ -50,7 +50,7 @@ void insertionSort(float *v, int tamanho) {
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void bubbleSort(float *v, int tamanho) {	
+void bubbleSort(int *v, int tamanho) {	
 	for (int ii = 0; ii < tamanho; ii++) {
 		for (int jj = 0; jj < tamanho - 1; jj++) {
 			if (v[jj] > v[jj + 1]) {
@@ -67,37 +67,28 @@ void bubbleSort(float *v, int tamanho) {
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void quickSort(float *v, int *esq, int *dir) {	
-	int i = esq;
-	int j = dir;
-	int tmp;
-	int pivot = v[(i + j) / 2];
+void quickSort(int *v, int tamanho) {	
+	if (tamanho <= 1) return;
 
-	while (i <= j) {
-		while (v[i] < pivot) {
-			i++;
+	int esq = 1;
+	int dir = tamanho - 1;
+
+	while (esq >= dir) {
+		while ((v[esq <= v[0]]) && (esq < dir)) {
+			esq++;
 		}
 
-		while (v[j] > pivot) {
-			j--;
+		while (v[dir] > v[0]) {
+			dir--;
 		}
 
-		if (i <= j) {
-			tmp = v[i];
-			v[i] = v[j];
-			v[j] = tmp;
-			i++;
-			j--;
-		}
-
-		if (esq < j) {
-			quickSort(v, esq, j);
-		}
-
-		if (i < dir) {
-			quickSort(v, i, dir);
+		if (v[dir] > v[esq]) {
+			int aux = v[esq];
+			v[esq] = v[dir];
+			v[dir] = aux;
 		}
 	}
+
 }
 
 /**
@@ -106,7 +97,7 @@ void quickSort(float *v, int *esq, int *dir) {
 * @param low		Primeiro elemento do vetor
 * @param high		Ultimo elemento do vetor
 */
-void mergeSort(float *v, int low, int high) {	
+void mergeSort(int *v, int low, int high) {	
 	int mid;
 
     if (low < high) {
