@@ -103,17 +103,56 @@ void quickSort(float *v, int *esq, int *dir) {
 /**
 * @brief			Função que realiza a ordenação mergesort em um vetor
 * @param *v			Vetor com os elementos desordenados
-* @param tamanho	Inteiro com o tamanho do vetor
+* @param low		Primeiro elemento do vetor
+* @param high		Ultimo elemento do vetor
 */
-void mergeSort(float *v, int tamanho) {	
-	
-}
+void mergeSort(float *v, int low, int high) {	
+	int mid;
+
+    if (low < high) {
+        mid = (low + high) / 2;
+        mergeSort(v, low, mid);
+        mergeSort(v, mid + 1, high);
+        intercalar(v, low, high, mid);
+    }
+}	
 
 /**
-* @brief			Função que realiza a ordenação decimal em um vetor
-* @param *v			Vetor com os elementos desordenados
-* @param tamanho	Inteiro com o tamanho do vetor
+* @brief			Função que realiza a intercalacao durante a ordenacao mergesort em um vetor
+* @param *a			Vetor intercalado com os elementos desordenados
+* @param low		Primeiro elemento do vetor
+* @param high		Ultimo elemento do vetor
+* @param mid		Elemento do meio no vetor
 */
-void radixSort(float *v, int tamanho) {	
-	
+void intercalar(int *a, int low, int high, int mid) {
+    int i = low, j = mid + 1, k = low, c[50];    
+
+    while (i <= mid && j <= high) {
+        if (a[i] < a[j]) {
+            c[k] = a[i];
+            k++;
+            i++;
+        } else {
+            c[k] = a[j];
+            k++;
+            j++;
+        }
+    }
+
+    while (i <= mid) {
+        c[k] = a[i];
+        k++;
+        i++;
+    }
+
+    while (j <= high) {
+        c[k] = a[j];
+        k++;
+        j++;
+    }
+
+    for (i = low; i < k; i++) {
+        a[i] = c[i];
+    }
 }
+
