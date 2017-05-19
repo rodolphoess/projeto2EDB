@@ -1,11 +1,10 @@
 /**
 * @file 	sort_algorithm.h
-* @brief	Arquivo de cabeçalho com funções que realizam a ordenação 
+* @brief	Arquivo de cabeçalho com funções que realizam a ordenação
 * @author	Daniel Oliveira (daniel99955@hotmail.com)
 * @author 	Rodolpho Erick	(rodolphoerick90@gmail.com)
-* @author	Luis Eduardo 	(luiseduardorique@gmail.com)
 * @since	08/05/2017
-* @date		08/05/2017
+* @date	08/05/2017
 */
 
 #ifndef  _SORT_ALGORITHM_H
@@ -13,7 +12,7 @@
 
 
 /**
-* @brief			Função que realiza a ordenação por seleção em um vetor 
+* @brief			Função que realiza a ordenação por seleção em um vetor
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */

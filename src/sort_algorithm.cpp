@@ -1,17 +1,16 @@
 /**
 * @file 	sort_algorithm.cpp
-* @brief	Arquivo de corpo com as implementações das funções que realizam a ordenação 
+* @brief	Arquivo de corpo com as implementações das funções que realizam a ordenação
 * @author	Daniel Oliveira (daniel99955@hotmail.com)
 * @author 	Rodolpho Erick	(rodolphoerick90@gmail.com)
-* @author	Luis Eduardo 	(luiseduardorique@gmail.com)
 * @since	08/05/2017
-* @date		08/05/2017
+* @date	08/05/2017
 */
 
 #include "../include/sort_algorithm.h"
 
 /**
-* @brief			Função que realiza a ordenação por seleção em um vetor 
+* @brief			Função que realiza a ordenação por seleção em um vetor
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
@@ -25,16 +24,16 @@ void selectionSort(int *v, int tamanho) {
 			float aux = v[ii];
 			v[ii] = v[menor];
 			v[menor] = aux;
-		}	
+		}
 	}
 }
 
 /**
 * @brief			Função que realiza a ordenação por inserção em um vetor
 * @param *v			Vetor com os elementos desordenados
-* @param tamanho	Inteiro com o tamanho do vetor
+* @param tamanho		Inteiro com o tamanho do vetor
 */
-void insertionSort(int *v, int tamanho) {	
+void insertionSort(int *v, int tamanho) {
 	for (int ii = 0; ii < tamanho; ii++) {
 		//int el = v[ii];
 			for (int jj = ii; jj >= 1 && v[jj] < v[jj - 1]; jj--) {
@@ -50,7 +49,7 @@ void insertionSort(int *v, int tamanho) {
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void bubbleSort(int *v, int tamanho) {	
+void bubbleSort(int *v, int tamanho) {
 	for (int ii = 0; ii < tamanho; ii++) {
 		for (int jj = 0; jj < tamanho - 1; jj++) {
 			if (v[jj] > v[jj + 1]) {
@@ -67,7 +66,7 @@ void bubbleSort(int *v, int tamanho) {
 * @param *v			Vetor com os elementos desordenados
 * @param tamanho	Inteiro com o tamanho do vetor
 */
-void quickSort(int *v, int tamanho) {	
+void quickSort(int *v, int tamanho) {
 	if (tamanho <= 1) return;
 
 	int esq = 1;
@@ -97,16 +96,16 @@ void quickSort(int *v, int tamanho) {
 * @param low		Primeiro elemento do vetor
 * @param high		Ultimo elemento do vetor
 */
-void mergeSort(int *v, int low, int high) {	
+void mergeSort(int *v, int low, int high) {
 	int mid;
 
-    if (low < high) {
-        mid = (low + high) / 2;
-        mergeSort(v, low, mid);
-        mergeSort(v, mid + 1, high);
-        intercalar(v, low, high, mid);
-    }
-}	
+	if (low < high) {
+		mid = (low + high) / 2;
+		mergeSort(v, low, mid);
+		mergeSort(v, mid + 1, high);
+		intercalar(v, low, high, mid);
+	}
+}
 
 /**
 * @brief			Função que realiza a intercalacao durante a ordenacao mergesort em um vetor
@@ -116,34 +115,34 @@ void mergeSort(int *v, int low, int high) {
 * @param mid		Elemento do meio no vetor
 */
 void intercalar(int *a, int low, int high, int mid) {
-    int i = low, j = mid + 1, k = low, c[50];    
+	int i = low, j = mid + 1, k = low, c[50];
 
-    while (i <= mid && j <= high) {
-        if (a[i] < a[j]) {
-            c[k] = a[i];
-            k++;
-            i++;
-        } else {
-            c[k] = a[j];
-            k++;
-            j++;
-        }
-    }
+	while (i <= mid && j <= high) {
+		if (a[i] < a[j]) {
+			c[k] = a[i];
+			k++;
+			i++;
+		} else {
+			c[k] = a[j];
+			k++;
+			j++;
+		}
+	}
 
-    while (i <= mid) {
-        c[k] = a[i];
-        k++;
-        i++;
-    }
+	while (i <= mid) {
+		c[k] = a[i];
+		k++;
+		i++;
+	}
 
-    while (j <= high) {
-        c[k] = a[j];
-        k++;
-        j++;
-    }
+	while (j <= high) {
+		c[k] = a[j];
+		k++;
+		j++;
+	}
 
-    for (i = low; i < k; i++) {
-        a[i] = c[i];
-    }
+	for (i = low; i < k; i++) {
+		a[i] = c[i];
+	}
 }
 
